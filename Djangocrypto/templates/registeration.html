@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'regis.css'%}">
+</head>
+<body>
+
+
+        <style media="screen">
+          body{
+          	margin: 0;
+          	padding: 0;
+          	display: flex;
+          	justify-content: center;
+          	align-items: center;
+          	min-height: 100vh;
+          	font-family: 'Jost', sans-serif;
+          	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+          }
+          p{
+            color:white;
+            text-align: center;
+            font-size: 0.65em;
+          }
+          .login{
+            font-size:2em;
+          }
+
+          h1{
+            text-align: center;
+            color: white;
+          }
+          label{
+
+          	color: #fff;
+          	font-size: 1.0em;
+          	justify-content: center;
+          	display: flex;
+          	margin: 5px;
+          	font-weight: bold;
+          	cursor: pointer;
+          	transition: .5s ease-in-out;
+          }
+          input{
+          	width: 60%;
+          	height: 10px;
+          	background: #e0dede;
+          	justify-content: center;
+          	display: flex;
+          	margin: 10px auto;
+          	padding: 7px;
+          	border: none;
+          	outline: none;
+          	border-radius: 5px;
+          }
+          button{
+          	width: 40%;
+          	height: 50px;
+          	margin: 10px auto;
+          	justify-content: center;
+          	display: block;
+          	color: #fff;
+          	background: #573b8a;
+          	font-size: 1em;
+          	font-weight: bold;
+          	margin-top: 20px;
+          	outline: none;
+          	border: none;
+          	border-radius: 5px;
+          	transition: .2s ease-in;
+          	cursor: pointer;
+          }
+          button:hover{
+          	background: #6d44b8;
+          }
+
+
+
+          a{
+            text-align:center;
+            color:white;
+          }
+
+        </style>
+
+{% load crispy_forms_tags %}
+
+<!--Register-->
+<div class="container">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}
+
+
+    <div class="registerbtn">
+
+
+
+		<button class="btn btn-primary"  type="submit">Register</button>
+    </div>
+	</form>
+  <div class="container signin">
+
+<div class="login">
+
+
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+
+  </div>
+    </div>
+</div>
+
+
+
+
+  </body>
+</html>
